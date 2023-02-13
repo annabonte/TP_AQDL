@@ -17,6 +17,6 @@ jobs:
     - name: "Docker Login"
       run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
     - name: "Build the Docker image"
-      run: docker build . --file Dockerfile --tag TP_AQDL_test:$(date +%s)
+      run: docker build . --file Dockerfile --tag tp_aqdl_test:$(date +%s)
     - name: "Docker push"
       run: docker push ${{secrets.DOCKER_USER}}/tp_aqdl
