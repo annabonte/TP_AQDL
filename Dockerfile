@@ -5,4 +5,3 @@ CMD mvn
 WORKDIR /client
 CMD npm install
 CMD npm start
-WORKDIR /TP_AQDL
