@@ -14,9 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: "Docker Login"
-      run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
-    - name: "Build the Docker image"
-      run: docker build /home/runner/work/TP_AQDL -f Dockerfile -t tp_aqdl:test
-    - name: "Push"
-      run: docker push ${{secrets.DOCKER_USER}}/tp_aqdl:test 
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{secrets.DOCKER_PASSWORD}}
+    - name: "Build and push the Docker image"
+      uses: docker/build-push-action@v4
+      with:
+        push: true
+        tags: annabonte/tp_aqdl:latest
