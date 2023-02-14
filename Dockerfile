@@ -4,4 +4,4 @@ WORKDIR /server
 CMD mvn 
 WORKDIR /client
 CMD npm start
-WORKDIR ..
+WORKDIR /TP_AQDL
