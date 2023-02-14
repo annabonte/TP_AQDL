@@ -4,3 +4,4 @@ WORKDIR /server
 CMD mvn 
 WORKDIR /client
 CMD npm start
+WORKDIR ..
