@@ -18,6 +18,7 @@ jobs:
       run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
     - name: "Build the Docker image"
       run: cd /home/runner/work/TP_AQDL |
-        docker build . -f Dockerfile.dev -t tp_aqdl:tagname
+        docker build . -f Dockerfile.dev -t ${{secrets.DOCKER_USER}}/tp_aqdl:latest
     - name: "Docker push"
-      run: docker push library/${{secrets.DOCKER_USER}}/tp_aqdl:tagname
+      run: docker run ${{secrets.DOCKER_USER}}/tp_aqdl:latest |
+      docker push ${{secrets.DOCKER_USER}}/tp_aqdl:latest
