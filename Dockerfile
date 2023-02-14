@@ -1,3 +1,6 @@
 FROM node:alpine
 COPY . /TP_AQDL
-CMD entrypoint.sh
+WORKDIR /server
+CMD mvn 
+WORKDIR /client
+CMD npm start
