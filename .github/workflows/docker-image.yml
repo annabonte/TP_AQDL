@@ -20,4 +20,4 @@ jobs:
       run: cd /home/runner/work/TP_AQDL |
         docker build . -f Dockerfile.dev -t tp_aqdl:tagname
     - name: "Docker push"
-      run: docker push tp_aqdl:tagname
+      run: docker push library/${{secrets.DOCKER_USER}}/tp_aqdl:tagname
