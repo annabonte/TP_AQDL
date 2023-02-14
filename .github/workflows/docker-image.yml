@@ -19,5 +19,5 @@ jobs:
     - name: "Build the Docker image"
       run: cd /home/runner/work/TP_AQDL |
         docker build . -f Dockerfile.dev -t tp_aqdl:latest |
-        docker run ${{secrets.DOCKER_USER}}/tp_aqdl:latest |
-        docker push ${{secrets.DOCKER_USER}}/tp_aqdl:latest 
+        docker run repository/docker/${{secrets.DOCKER_USER}}/tp_aqdl:latest |
+        docker push repository/docker/${{secrets.DOCKER_USER}}/tp_aqdl:latest 
