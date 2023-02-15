@@ -33,8 +33,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@master
-        with:
-          dockerfile: "Dockerfile"
+        # with:
+        #   dockerfile: "Dockerfile"
